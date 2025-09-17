@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TaskFlow</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .task-card { touch-action: manipulation; }
+        body { background-color: #f0f2f5; }
+    </style>
+</head>
+<body class="h-screen font-sans">
+
+    <div id="login-view" class="flex items-center justify-center h-full">
+        <div class="text-center p-10 bg-white rounded-xl shadow-lg">
+            <h1 class="text-3xl font-bold mb-4">Welcome to TaskFlow 📋</h1>
+            <p class="mb-4 text-gray-600">Enter a username to begin.</p>
+            <div class="flex">
+                <input id="username-input" type="text" placeholder="e.g., Ojas" class="p-2 border rounded-l-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button id="login-button" class="bg-blue-600 hover:bg-blue-700 text-white font-bold p-2 rounded-r-md">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="app-view" class="hidden h-full flex flex-col">
+        <header class="flex justify-between items-center p-4 bg-white shadow-md">
+            <h1 class="text-2xl font-bold text-gray-800">My Project Board</h1>
+            <p class="text-gray-600">User: <span id="user-display" class="font-bold"></span></p>
+        </header>
+        <main id="board-container" class="flex-grow p-4 flex space-x-4 overflow-x-auto">
+            </main>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
